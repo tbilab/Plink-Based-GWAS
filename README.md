@@ -15,7 +15,12 @@ other pre-requirements:
 ## Procedures
 
 
-* 1.**git clone https://github.com/verasiwei/GWAS_python**
+* 1.
+
+```
+git clone https://github.com/verasiwei/GWAS_python
+```
+
 * 2.users to edit the directory in config.py
 * 3.On your terminal, cd to the folder "pythonscript"
 
