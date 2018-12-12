@@ -15,7 +15,7 @@ other pre-requirements:
 ## Procedures
 
 
-* 1.
+* 1.Git clone this repository
 
 ```
 git clone https://github.com/verasiwei/GWAS_python
