@@ -19,7 +19,9 @@ other pre-requirements:
 * 2.users to edit the directory in config.py
 * 3.On your terminal, cd to the folder "pythonscript"
 
-  **python quality_control.py**
+```
+$ python quality_control.py
+```
 
 Notice: 
 
@@ -28,8 +30,10 @@ Notice:
 2.Answer each question on the screen during the process, do not need to include quotation markers
 
 * 4.On your terminal, cd to the folder "pythonscript" 
-  
-  **python imputation.py**
+
+```
+$ python imputation.py
+```
 
 Notice: 
 
@@ -40,7 +44,9 @@ during this process, just answer the "Phase1" or "Phase3" when the question prom
 
 * 5.On your terminal, cd to the folder "pythonscript", a manhattan plot and a qqplot shown like the below will be created. 
 
-  **python post_imputation.py**
+```
+$ python post_imputation.py
+```
 
 Notice:
 
