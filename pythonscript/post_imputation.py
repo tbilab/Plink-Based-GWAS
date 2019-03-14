@@ -64,7 +64,7 @@ def postimputation():
         chrplinklist2 = ["#SBATCH --mem=%s\n" % memory, "#SBATCH --output=imputejob_%s.out\n" % chr]
         chrplink.writelines(chrplinklist1)
         chrplink.writelines(chrplinklist2)
-        chrplinklist3 = [str(plink), " --data -gen %simpute2/chr%s_chunkall.gen " % (resultdir, chr),  "--sample %sshapeit/cleantotaldata_extractqc.chr%s.phased.sample " % (resultdir, chr), "--hard-call-threshold 0.2 --oxford-single-chr %s " % (chr)]
+        chrplinklist3 = [str(plink), " --data -gen %simpute2/chr%s_chunkall.gen " % (resultdir, chr),  "--sample %sshapeit/shapeitcleantotaldata_extractqc.chr%s.phased.sample " % (resultdir, chr), "--hard-call-threshold 0.2 --oxford-single-chr %s " % (chr)]
         chrplinklist4 = ["--make-bed --out %simpute2/chr%s_chunkall" % (resultdir, chr)]
         chrplink.writelines(chrplinklist3)
         chrplink.writelines(chrplinklist4)
@@ -81,7 +81,7 @@ def postimputation():
     os.system(str(plink) + " --bfile %simpute2/chr1_chunkall --merge-list %scombinechrplink.txt --make-bed --out %simpute2/allchr" % (resultdir, inputfile, resultdir))
 
     # remove SNPs with 3+ alleles, detect which chromosome these SNPs on
-    os.system("%s --bfile %simpute2/chr17_chunkall --exclude %simpute2/allchr-merge.missnp --make-bed --out %simpute2/allchr" % (plink, resultdir, inputfile, resultdir))
+    os.system("%s --bfile %simpute2/chr17_chunkall --exclude %simpute2/allchr-merge.missnp --make-bed --out %simpute2/chr17_chunkall" % (plink, resultdir, inputfile, resultdir))
     os.system("%s --bfile %simpute2/chr1_chunkall --merge-list %scombinechrplink.txt --make-bed --out %simpute2/allchr" % (plink, resultdir, inputfile, resultdir))
 
 

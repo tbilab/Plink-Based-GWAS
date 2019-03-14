@@ -70,8 +70,8 @@ def preshapeit():
                 # alignment of the SNPs between the target set and reference set
                 aligncmd1 = "for chr in `seq 1 22`; do "
                 aligncmd2 = str(shapeit) + " -check -B " + str(output) + "cleantotaldata_extractqc.chr${chr} -M " + str(reference) + "1000GP_Phase3/genetic_map_chr${chr}_combined_b37.txt --input-ref "
-                aligncmd3 = str(reference) + "1000GP_Phase3/1000GP_Phase3_chr${chr}.hap.gz " + str(reference) + str(refdir) + "1000GP_Phase3/1000GP_Phase3_chr${chr}.legend.gz "
-                aligncmd4 = str(reference) + str(refdir) + "1000GP_Phase3.sample --output-log " + str(output) + "chr${chr}.alignment;done"
+                aligncmd3 = str(reference) + "1000GP_Phase3/1000GP_Phase3_chr${chr}.hap.gz " + str(reference) + "1000GP_Phase3/1000GP_Phase3_chr${chr}.legend.gz "
+                aligncmd4 = str(reference) + "1000GP_Phase3.sample --output-log " + str(output) + "chr${chr}.alignment;done"
                 align = aligncmd1 + aligncmd2 + aligncmd3 + aligncmd4
                 os.system(align)
 
