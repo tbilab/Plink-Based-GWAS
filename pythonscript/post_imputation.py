@@ -113,6 +113,14 @@ def unilog():
     os.system("Rscript %sunilogassoc.R %s" % (rscript, resultdir))
 
 
+def prs():
+    # this is used to generate prs score
+    # R script is used to get the log of odds ratio for each SNP
+    os.system("Rscript %sprs.R %sunilog_covs.csv" % (rscript, resultdir))
+    # this is used to generate prs score file
+    os.system("%s --bfile %simpute2/cleanchr_qc --noweb --score %ssnpprs_logOR.raw --out %ssnpprs_logOR" % (plink, resultdir, inputfile, resultdir))
+
+
 def annotation():
     # unzip the annovar tool that downloaded in the folder annotation
     os.system("tar xzvf %sannovar.latest.tar.gz --directory %s" % (annotation, annotation))
@@ -143,7 +151,8 @@ def annotation():
 # for chr in range(1, 23):
 #        os.system("sbatch " + str(inputfile) + "chrplink_TASK_%s.slurm" % chr)
 # postimputation2()
-unilog()
+# unilog()
+# prs()
 # annotation()
 
 
