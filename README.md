@@ -1,13 +1,14 @@
 # GWAS Pipeline
 This is the standard GWAS pipeline. Please notice that your GWAS sites is in buid37 coordinate system, if it is not the case, you can use the UCSC liftOver tool to perform the conversion to build37 system. Please also notice it is prefer that your GWAS dataset is forward strand, otherwise the SNPs which found in both reference panel and target panel that have an incompatible alleles types will be removed during the procedure of strand alignment check in this pipeline. 
+
 ## Requirement: 
 please download tools to the folder "software": 
-* plink (please download the latest plink1.9, otherwise you will waste a lot of time!!!)
+* plink (please download the latest plink1.9 or plink2, otherwise you will waste a lot of time!!!)
 * shapeit
 * impute2
 
 other pre-requirements:
-* a cluster or you need a server with many cores
+* a cluster
 * genotyped data(plink format, transform to bed/bim/fam before running the pipeline if your genotyped data is ped/map)
 * enough storage since very large files will be created during imputation procedure
 * R 3.4.3;gawk;python3.6.3
